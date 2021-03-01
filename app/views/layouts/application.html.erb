@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to 'home', user_path(current_user.id) %>
+        </li>
+        <li>
+          <%= link_to 'Users', users_path %>
+        </li>
+        <li>
+          <%= link_to 'books', books_path %>
+        </li>
+        <li>
+          <%= link_to "log out", destroy_user_session_path, method: :delete %>
+        </li>
+
+      <% else %>
+        <li>
+          <%= link_to "home", root_path %>
+        </li>
+        <li>
+          <%= link_to "about", homes_path %>
+        </li>
+        <li>
+          <%= link_to "sign_up", new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to "log in", new_user_session_path %>
+        </li>
+        <% end %>
+    </header>
+    <footer>Copyright Infratop.inc</footer>
+    <%= yield %>
+  </body>
+</html>
