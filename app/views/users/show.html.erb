@@ -1,3 +1,5 @@
+<%= flash[:notice] %>
+
 <!--ユーザー情報-->
 <h1>User info</h1>
 <div>
@@ -26,8 +28,8 @@
 <div>
   <% @books.each do |book| %>
     <p><%= attachment_image_tag book.user, :profile_image %></p>
-    <p>user: <%= book.user.name %></p>
-    <p>title：<%= book.title %></p>
+    <p><%= link_to book.user.name, user_path(current_user) %></p>
+    <p><%= link_to book.title, book_path(book) %></p>
     <p>body：<%= book.body %></p>
   <% end %>
 </div>
