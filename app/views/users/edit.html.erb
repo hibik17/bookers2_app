@@ -1,6 +1,6 @@
 <div class="containar">
-  <div class="row no-gutters">
-    <div class="ax-auto">
+  <div class="row">
+    <div class="container col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
       <h1>User info</h1>
       <div class="form-body p-4">
         <% if @user.errors.any? %>
@@ -16,12 +16,12 @@
           </div>
         <h3>Image</h3>
           <div class="input-group">
-            <%= f.attachment_field :profile_image, placeholder: "profile_image" %>
+            <%= f.attachment_field :profile_image, placeholder: "image" %>
           </div>
         <h3>Introduction</h3>
           <%= f.text_area :introduction, class:"form-control", placeholder:"introduction" %>
           <hr>
-          <%= f.submit 'Update User', class:"btn btn-lg btn-block btn-dark mt-4" %>
+          <%= f.submit 'Update User', class:"btn btn-lg btn-block btn-info mt-4" %>
         <% end %>
       </div>
     </div>
