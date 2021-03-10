@@ -1,4 +1,4 @@
-rairequire 'rails_helper'
+require 'rails_helper'
 
 describe 'bootstrapのテスト' do
 	let(:user) { create(:user) }
