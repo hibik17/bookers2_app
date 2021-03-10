@@ -13,6 +13,7 @@ class BooksController < ApplicationController
     else
       @book.user_id = current_user.id
       @books = Book.all
+      flash[:notice] = "new book create error"
       render :index
     end
 
